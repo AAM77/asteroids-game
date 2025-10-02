@@ -22,7 +22,8 @@ def main():
         screen.fill((0, 0, 0))
         player.draw(screen)
         pygame.display.flip()
-        clock.tick(60)/1000.0  # Limit to 60 FPS and get delta time
+        dt = clock.tick(60)/1000.0  # Limit to 60 FPS and get delta time
+        player.update(dt)
     
 
 if __name__ == "__main__":
