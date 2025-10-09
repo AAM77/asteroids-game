@@ -51,8 +51,9 @@ def main():
         # Limit to 60 FPS and get delta time
         dt = clock.tick(60)/1000.0
         
-        # for to_update in updatable:
-        #     to_update.update(dt)
+        for to_update in updatable:
+            to_update.update(dt)
+            player.cooldown -= dt
         
         for asteroid in asteroids:
             if player.checkCollision(asteroid):
